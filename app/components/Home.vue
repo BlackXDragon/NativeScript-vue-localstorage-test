@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    let applicationSettings = require('application-settings')
+    let LS = require('nativescript-localstorage')
     let dialogs = require('tns-core-modules/ui/dialogs')
     export default {
         data () {
@@ -22,17 +22,17 @@
         },
         methods: {
             saveMsg() {
-                applicationSettings.setString('message', this.msg);
+                LS.setItem('message', this.msg);
                 setTimeout(() => {
                     dialogs.alert({
                         title: "Alert!",
-                        message: "Your message has been saved: "+applicationSettings.getString('message', 'String not found'),
+                        message: "Your message has been saved: "+LS.getItem('message') || 'String not found',
                         okButtonText: "OK"
                     });
                 }, 3000);
             },
             onPageLoaded() {
-                this.msg = applicationSettings.getString('message', '');
+                this.msg = LS.getItem('message') || '';
             }
         }
     };
