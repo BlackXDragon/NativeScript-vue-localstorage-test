@@ -23,7 +23,7 @@
     "babel-loader": "~8.0.0",
     "nativescript-dev-webpack": "~0.24.0",
     "nativescript-vue-template-compiler": "~2.2.0",
-    "node-sass": "^4.7.1",
+    "node-sass": "^7.0.0",
     "vue-loader": "~15.4.0"
   },
   "gitHead": "8ab7726d1ee9991706069c1359c552e67ee0d1a4",
